@@ -36,8 +36,7 @@ L’application devra être :
 - Accompagnée d'un manuel d’aide à l’utilisateur, présentant l'application. 
 
 ##### 2.2. Charte graphique requise par l’application
-**2.2.1. Logo
-**
+**2.2.1. Logo**
 
 Le logo s’applique dans un bandeau dans un fond blanc ou très clairs afin de ne	pas modifier sa structure.
 
@@ -45,8 +44,7 @@ Le logo s’applique dans un bandeau dans un fond blanc ou très clairs afin de 
 
 Il est impératif de respecter les règles d’application du logo et de proscrire les altérations de couleurs et de formes du logo.
 		
-**2.2.2. Les couleurs
-**
+**2.2.2. Les couleurs**
 
 Les couleurs s’utilisent de la manière suivante : Les couleurs principales sont en priorités, pour tous les éléments ne nécessitant pas	plus de quatre couleurs.
 
@@ -86,12 +84,10 @@ L’application comprendra 4 pages :
 
 ##### 4.1. Page 1 «téléphoner»
 
-**4.1.1. Numéro du centre technique (modifiable)
-**
+**4.1.1. Numéro du centre technique (modifiable)**
 - 08 11 01 02 12
 
-**4.1.2.  Les numéros du service client (modifiable)
-**
+**4.1.2.  Les numéros du service client (modifiable)**
 - Collectivités : 09 69 32 18 11
 - Interlocuteur privilégié : François LEROUTIER 04 68 89 56 93 07 86 55 64 15 
 
