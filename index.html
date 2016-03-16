@@ -19,8 +19,7 @@
 <select name="affName" id="affName" size="12">
 </select>
 <script type="text/javascript">
-window.onload=function() {
-	charger();
+/*window.onload=function() {
   var inp = document.getElementById('fichier');
   inp.onchange = function() {
     readFile(this,function(res) {
@@ -33,7 +32,13 @@ window.onload=function() {
 		for (var i=0; i<tabFichier.length; i++) {
 			localStorage.setItem(tabFichier[i][1], tabFichier[i][0]);
 		}
-		charger();
+		for (var i = 0; i < localStorage.length; i++) {
+//			if (keyStorage === 'insee') { continue; }
+			var keyStorage = localStorage.key(i);
+			var valueStorage = localStorage.getItem(localStorage.key(i));
+			alert(keyStorage);
+//			document.getElementById('affName').innerHTML += "<option value='"+ keyStorage + "'>"+ valueStorage +" : "+ keyStorage +"</option>";
+		}
      });
   };
 };
@@ -54,17 +59,15 @@ function readFile(input,callback) {
     ts.Close();
     callback(res);
   }
-};
-function charger() {
-	for (var i = 0; i < localStorage.length; i++) {
-//		if (keyStorage === 'insee') { continue; }
-//		if (keyStorage === 'num') { continue; }
-		var keyStorage = localStorage.key(i);
-		var valueStorage = localStorage.getItem(localStorage.key(i));
-		alert(keyStorage);
-//		document.getElementById('affName').innerHTML += "<option value='"+ keyStorage + "'>"+ valueStorage +" : "+ keyStorage +"</option>";
-	}
-}
+}; */
+	var fileInput = document.querySelector('#fichier');
+	fileInput.addEventListener('change', function() {
+		var reader = new FileReader();
+		reader.addEventListener('load', function() {
+			alert('Contenu du fichier "' + fileInput.files[0].name + '" :\n\n' + reader.result);
+		});
+		reader.readAsText(fileInput.files[0]);
+	});
 </script>
 </body>
 </html>
