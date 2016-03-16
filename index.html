@@ -61,13 +61,30 @@ function readFile(input,callback) {
   }
 }; */
 	var fileInput = document.querySelector('#fichier');
-	fileInput.addEventListener('change', function() {
-		var reader = new FileReader();
-		reader.addEventListener('load', function() {
-			alert('Contenu du fichier "' + fileInput.files[0].name + '" :\n\n' + reader.result);
-		});
-		reader.readAsText(fileInput.files[0]);
-	});
+    fileInput.addEventListener('change', function() {
+        var reader = new FileReader();
+        reader.addEventListener('load', function() {
+			alert(reader.result);
+			/*
+            var tabFichier = [];
+			var tabTemp = reader.result.split('\n');
+			tabTemp.pop();
+			for (var i=0; i<tabTemp.length; i++) {
+				tabFichier.push(tabTemp[i].split(','));
+			}
+			for (var i=0; i<tabFichier.length; i++) {
+				localStorage.setItem(tabFichier[i][1], tabFichier[i][0]);
+			}
+			for (var i = 0; i < localStorage.length; i++) {
+//				if (keyStorage === 'insee') { continue; }
+				var keyStorage = localStorage.key(i);
+				var valueStorage = localStorage.getItem(localStorage.key(i));
+				console.log(keyStorage+" "+valueStorage);
+//				document.getElementById('affName').innerHTML += "<option value='"+ keyStorage + "'>"+ valueStorage +" : "+ keyStorage +"</option>";
+			} */
+        });
+        reader.readAsText(fileInput.files[0]);
+    });
 </script>
 </body>
 </html>
