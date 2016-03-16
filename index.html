@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>erdf</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="Content-Type" content="UTF-8">
+</head>
+<style>
+	option {
+		font-size: 20px;
+	}
+	option:nth-child(2n){
+		background-color: #AAA;
+	}
+</style>
+<body>
+	
+<input id="fichier" type="file" />
+<select name="affName" id="affName" size="12">
+</select>
+<script type="text/javascript">
+window.onload=function() {
+	charger();
+  var inp = document.getElementById('fichier');
+  inp.onchange = function() {
+    readFile(this,function(res) {
+    	var tabFichier = [];
+		var tabTemp = res.split('\n');
+		tabTemp.pop();
+		for (var i=0; i<tabTemp.length; i++) {
+			tabFichier.push(tabTemp[i].split(','));
+		}
+		for (var i=0; i<tabFichier.length; i++) {
+			localStorage.setItem(tabFichier[i][1], tabFichier[i][0]);
+		}
+		charger();
+     });
+  };
+};
+function readFile(input,callback) {
+  if(typeof FileReader !== 'undefined') {
+    var fr = new FileReader();
+    fr.readAsText(input.files[0]);
+    fr.onload = function() {
+      callback(fr.result);
+    };
+  } else if(typeof ActiveXObject !== 'undefined') {
+    var path = input.value,
+    ts = (new ActiveXObject("Scripting.FileSystemObject")).GetFile(path).OpenAsTextStream(1,-2),
+    res = '';
+    while (!ts.AtEndOfStream) {
+      res += ts.ReadLine() + '\n';
+    }
+    ts.Close();
+    callback(res);
+  }
+};
+function charger() {
+	for (var i = 0; i < localStorage.length; i++) {
+//		if (keyStorage === 'insee') { continue; }
+//		if (keyStorage === 'num') { continue; }
+		var keyStorage = localStorage.key(i);
+		var valueStorage = localStorage.getItem(localStorage.key(i));
+		alert(keyStorage);
+//		document.getElementById('affName').innerHTML += "<option value='"+ keyStorage + "'>"+ valueStorage +" : "+ keyStorage +"</option>";
+	}
+}
+</script>
+</body>
+</html>
