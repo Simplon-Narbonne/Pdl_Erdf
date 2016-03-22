@@ -3,17 +3,52 @@
 <head>
 	<title>erdf</title>
 	<meta charset="UTF-8">
+	<style>
+		select, button,[contenteditable="true"]  {
+			font-size: 20px;
+		}
+		select {
+			width: 300px;
+		}
+		[contenteditable="true"] {
+			border: 1px solid #AAA;
+			width: 150px;
+			height: 25px;
+		}
+		option:nth-child(2n), [contenteditable="true"]:focus, button{
+			border-color:#CCDB01;
+			background-color: #045DB2;
+			color: #FFF;
+		}
+		button{
+			height: 35px;
+			width: 100px;
+			
+		}
+	</style>
 </head>
 <body>
-<input id="fichier" type="file" onchange="previewFile()" />
-<script type="text/javascript">
-function previewFile() {
-	var reader  = new FileReader();
-	reader.addEventListener("load", function () {
-		alert(reader.result);
-	}, false);
-	reader.readAsText(document.querySelector('#fichier').files[0]);
-}
-</script>
+	
+	<div contenteditable="true" id="numInsee"></div>
+	<div contenteditable="true" id="numUrgence"></div>
+	<div contenteditable="true" id="numService"></div>
+	<div contenteditable="true" id="numPortable"></div>
+	<div contenteditable="true" id="numFix"></div>
+	<button type="button" onclick="editNum();">Modifier</button>
+
+
+<br />
+<div contenteditable="true" id="newName"></div>
+<div contenteditable="true" id="newPdl"></div>
+<button type="button" onclick="news();">Ajouter</button>
+<br />
+<select id="PDL" size="12">
+	
+</select>
+<br />
+<button type="button" onclick="del(document.getElementById('PDL').value)">Suprimer</button>
+
+<script type="text/javascript" src="script.js"></script>
+
 </body>
 </html>
