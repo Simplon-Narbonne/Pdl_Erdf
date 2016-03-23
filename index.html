@@ -10,6 +10,8 @@
 		select {
 			width: 300px;
 		}
+		select[size] {
+		}
 		[contenteditable="true"] {
 			border: 1px solid #AAA;
 			width: 150px;
@@ -42,7 +44,7 @@
 <div contenteditable="true" id="newPdl"></div>
 <button type="button" id="news">Ajouter</button>
 <br />
-<select id="PDL" size="12">
+<select id="PDL">
 </select>
 <br />
 <button type="button" id="del">Suprimer</button>
@@ -51,6 +53,9 @@
 
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="script.js"></script>
+<script>
+	document.getElementById('PDL').size = 12;
+</script>
 
 </body>
 </html>
