@@ -116,29 +116,33 @@ if (document.getElementById('numFix')) {
 // --------------------------------------------------------
 // Fonction ajout d'un PDL
 // --------------------------------------------------------
-document.getElementById('news').addEventListener('click', function() {
-	if (localStorage.length < 17) { // limitation a 12 du nombre de PDL (17-5 car le code INSEE et les N° de tel son aussi des localStorage)
-		var newName = document.getElementById('newName').innerHTML;
-    	var newPdl = document.getElementById('newPdl').innerHTML;
-		if (regPdl.test(newPdl) && newName){ // verif si on est bon avec l'expression reguliere et si Le nom du PDL existe
-			localStorage.setItem(newName,newPdl); // creation du localStorage
-			location.reload(); // rechargement de la page
+if (document.getElementById('news')) {
+	document.getElementById('news').addEventListener('click', function() {
+		if (localStorage.length < 17) { // limitation a 12 du nombre de PDL (17-5 car le code INSEE et les N° de tel son aussi des localStorage)
+			var newName = document.getElementById('newName').innerHTML;
+    		var newPdl = document.getElementById('newPdl').innerHTML;
+			if (regPdl.test(newPdl) && newName){ // verif si on est bon avec l'expression reguliere et si Le nom du PDL existe
+				localStorage.setItem(newName,newPdl); // creation du localStorage
+				location.reload(); // rechargement de la page
+			}
+			else {
+				alert("Numero PDL invalide"); // msg d'erreur
+			}
 		}
 		else {
-			alert("Numero PDL invalide"); // msg d'erreur
+			alert("Nombre de PDL limiter"); // msg d'erreur
 		}
-	}
-	else {
-		alert("Nombre de PDL limiter"); // msg d'erreur
-	}
-});
+	});
+}
 // --------------------------------------------------------
 // Fonction sup d'un PDL
 // --------------------------------------------------------
-document.getElementById('del').addEventListener('click', function() { // paramètres qui correspond à la key du localStorage
-    localStorage.removeItem(document.getElementById('PDL').value); // sup
-    location.reload(); // rechargement de la page
-});
+if (document.getElementById('del')) {
+	document.getElementById('del').addEventListener('click', function() { // paramètres qui correspond à la key du localStorage
+	    localStorage.removeItem(document.getElementById('PDL').value); // sup
+	    location.reload(); // rechargement de la page
+	});
+}
 // --------------------------------------------------------
 // Fonction edit des localStorage utile pour l'appli
 // --------------------------------------------------------
@@ -188,14 +192,16 @@ document.getElementById('edit').addEventListener('click', function() {
 // --------------------------------------------------------
 // Fonction envoyer la notif
 // --------------------------------------------------------
-document.getElementById('appel').addEventListener('click', function() {
-	var now = new Date().getTime(), //récupère l'heure
-        heureNotif = new Date(now + 1*1000); //ajoute 1 sec à l'heure, pour lancer la notif 3 sec après le clic
+if (document.getElementById('appel')){
+	document.getElementById('appel').addEventListener('click', function() {
+		var now = new Date().getTime(), //récupère l'heure
+	        heureNotif = new Date(now + 1*1000); //ajoute 1 sec à l'heure, pour lancer la notif 3 sec après le clic
 
-        window.plugin.notification.local.add({
-        id:      '1',               //On peut laisser toujours le meme id, cela ne gène pas a mon avis
-        title:   document.getElementById('PDL').value,
-        message: 'PDL : ' + localStorage.getItem(document.getElementById('PDL').value), //Message affiché dans la notif
-        date:    heureNotif // si on ne met pas ce paramètre la notif se lancera dès le clic
-        });
-});
+	        window.plugin.notification.local.add({
+	        id:      '1',               //On peut laisser toujours le meme id, cela ne gène pas a mon avis
+	        title:   document.getElementById('PDL').value,
+	        message: 'PDL : ' + localStorage.getItem(document.getElementById('PDL').value), //Message affiché dans la notif
+	        date:    heureNotif // si on ne met pas ce paramètre la notif se lancera dès le clic
+	        });
+	});
+}
