@@ -130,14 +130,14 @@ document.getElementById('news').addEventListener('click', function() {
 	else {
 		alert("Nombre de PDL limiter"); // msg d'erreur
 	}
-});
+}, false);
 // --------------------------------------------------------
 // Fonction sup d'un PDL
 // --------------------------------------------------------
 document.getElementById('del').addEventListener('click', function() { // paramètres qui correspond à la key du localStorage
     localStorage.removeItem(document.getElementById('PDL').value); // sup
     location.reload(); // rechargement de la page
-});
+}, false);
 // --------------------------------------------------------
 // Fonction edit des localStorage utile pour l'appli
 // --------------------------------------------------------
@@ -173,7 +173,7 @@ document.getElementById('edit').addEventListener('click', function() {
 		alert("Numero de l'interlocuteur privilégié invalide"); // msg d'erreur
 	}
 	location.reload(); // rechargement de la page
-});
+}, false);
 // --------------------------------------------------------
 // Fonction envoyer la notif
 // --------------------------------------------------------
@@ -187,4 +187,4 @@ document.getElementById('appel').addEventListener('click', function() {
         message: 'PDL : ' + localStorage.getItem(document.getElementById('PDL').value), //Message affiché dans la notif
         date:    heureNotif // si on ne met pas ce paramètre la notif se lancera dès le clic
         });
-});
+}, false);
