@@ -67,6 +67,7 @@ if (!localStorage.getItem("numPortable")) { // vérif de l'existence du localSto
 // Affichage de tout les PDL si l'ID existe
 // --------------------------------------------------------
 if(document.getElementById('PDL')) { // verif de l'existence de l'ID PDL
+	document.getElementById('PDL').size = 12; //taille du select
 	for (var i = 0; i < localStorage.length; i++) { //boucle qui recup tout les pdl
 		var keyStorage = localStorage.key(i);
 		var valueStorage = localStorage.getItem(localStorage.key(i));		
@@ -142,35 +143,45 @@ document.getElementById('del').addEventListener('click', function() { // paramè
 // Fonction edit des localStorage utile pour l'appli
 // --------------------------------------------------------
 document.getElementById('edit').addEventListener('click', function() {
-	if (regInsee.test(document.getElementById('numInsee').innerHTML)) { // verif si on est bon avec l'expression reguliere
-		localStorage.setItem("numInsee",document.getElementById('numInsee').innerHTML); // modif du localStorage
+	if (document.getElementById('numInsee')){
+		if (regInsee.test(document.getElementById('numInsee').innerHTML)) { // verif si on est bon avec l'expression reguliere
+			localStorage.setItem("numInsee",document.getElementById('numInsee').innerHTML); // modif du localStorage
+		}
+		else {
+			alert("Code INSEE invalide"); // msg d'erreur
+		}
 	}
-	else {
-		alert("Code INSEE invalide"); // msg d'erreur
+	if (document.getElementById('numUrgence')){
+		if (regTel.test(document.getElementById('numUrgence').innerHTML)) { // verif si on est bon avec l'expression reguliere
+			localStorage.setItem("numUrgence",document.getElementById('numUrgence').innerHTML); // modif du localStorage
+		}
+		else {
+			alert("Numero d'urgence invalide"); // msg d'erreur
+		}
 	}
-	if (regTel.test(document.getElementById('numUrgence').innerHTML)) { // verif si on est bon avec l'expression reguliere
-		localStorage.setItem("numUrgence",document.getElementById('numUrgence').innerHTML); // modif du localStorage
+	if (document.getElementById('numService')){
+		if (regTel.test(document.getElementById('numService').innerHTML)) { // verif si on est bon avec l'expression reguliere
+			localStorage.setItem("numService",document.getElementById('numService').innerHTML); // modif du localStorage
+		}
+		else {
+			alert("Numero de service invalide"); // msg d'erreur
+		}
 	}
-	else {
-		alert("Numero d'urgence invalide"); // msg d'erreur
+	if (document.getElementById('numPortable')){
+		if (regTel.test(document.getElementById('numPortable').innerHTML)) { // verif si on est bon avec l'expression reguliere
+			localStorage.setItem("numPortable",document.getElementById('numPortable').innerHTML); // modif du localStorage
+		}
+		else {
+			alert("Numero de l'interlocuteur privilégié invalide"); // msg d'erreur
+		}
 	}
-	if (regTel.test(document.getElementById('numService').innerHTML)) { // verif si on est bon avec l'expression reguliere
-		localStorage.setItem("numService",document.getElementById('numService').innerHTML); // modif du localStorage
-	}
-	else {
-		alert("Numero de service invalide"); // msg d'erreur
-	}
-	if (regTel.test(document.getElementById('numPortable').innerHTML)) { // verif si on est bon avec l'expression reguliere
-		localStorage.setItem("numPortable",document.getElementById('numPortable').innerHTML); // modif du localStorage
-	}
-	else {
-		alert("Numero de l'interlocuteur privilégié invalide"); // msg d'erreur
-	}
-	if (regTel.test(document.getElementById('numFix').innerHTML)) { // verif si on est bon avec l'expression reguliere
-		localStorage.setItem("numFix",document.getElementById('numFix').innerHTML); // modif du localStorage
-	}
-	else {
-		alert("Numero de l'interlocuteur privilégié invalide"); // msg d'erreur
+	if (document.getElementById('numFix')){
+		if (regTel.test(document.getElementById('numFix').innerHTML)) { // verif si on est bon avec l'expression reguliere
+			localStorage.setItem("numFix",document.getElementById('numFix').innerHTML); // modif du localStorage
+		}
+		else {
+			alert("Numero de l'interlocuteur privilégié invalide"); // msg d'erreur
+		}
 	}
 	location.reload(); // rechargement de la page
 }, false);
