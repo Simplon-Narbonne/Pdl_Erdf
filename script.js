@@ -123,6 +123,7 @@ if (document.getElementById('news')){
 	    	var newPdl = document.getElementById('newPdl').innerHTML;
 			if (regPdl.test(newPdl) && newName){ // verif si on est bon avec l'expression reguliere et si Le nom du PDL existe
 				localStorage.setItem(newName,newPdl); // creation du localStorage
+				alert('Modification validée(s)'); //msg de validation
 				location.reload(); // rechargement de la page
 			}
 			else {
@@ -140,6 +141,7 @@ if (document.getElementById('news')){
 if (document.getElementById('del')){
 	document.getElementById('del').addEventListener('click', function() { // paramètres qui correspond à la key du localStorage
 	    localStorage.removeItem(document.getElementById('PDL').value); // sup
+	    alert('Modification validée(s)'); //msg de validation
 	    location.reload(); // rechargement de la page
 	}, false);
 }
@@ -188,7 +190,8 @@ if (document.getElementById('edit')){
 				alert("Numero de l'interlocuteur privilégié invalide"); // msg d'erreur
 			}
 		}
-		location.reload(); // rechargement de la page
+		alert('Modification validée(s)'); //msg de validation
+		history.back(); // page precedente
 	}, false);
 }
 // --------------------------------------------------------
@@ -205,5 +208,6 @@ if (document.getElementById('appel')){
 		    message: 'PDL : ' + localStorage.getItem(document.getElementById('PDL').value), //Message affiché dans la notif
 		    date:    heureNotif // si on ne met pas ce paramètre la notif se lancera dès le clic
 		});
+		document.location.href='tel:+33'+localStorage.getItem('numUrgence').substr(1);
 	}, false);
 }
