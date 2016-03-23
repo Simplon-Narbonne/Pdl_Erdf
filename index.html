@@ -34,20 +34,22 @@
 	<div contenteditable="true" id="numService"></div>
 	<div contenteditable="true" id="numPortable"></div>
 	<div contenteditable="true" id="numFix"></div>
-	<button type="button" onclick="editNum();">Modifier</button>
+	<button type="button" id="edit">Modifier</button>
 
 
 <br />
 <div contenteditable="true" id="newName"></div>
 <div contenteditable="true" id="newPdl"></div>
-<button type="button" onclick="news();">Ajouter</button>
+<button type="button" id="news">Ajouter</button>
 <br />
 <select id="PDL" size="12">
-	
 </select>
 <br />
-<button type="button" onclick="del(document.getElementById('PDL').value)">Suprimer</button>
+<button type="button" id="del">Suprimer</button>
 
+<button type="button" id="appel">Appel</button>
+
+<script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="script.js"></script>
 
 </body>

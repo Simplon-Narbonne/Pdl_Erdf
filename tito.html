@@ -1,0 +1,100 @@
+<style>
+/*Responsive CSS triangles. Resize the Result section to see the triangles in action.*/
+
+div {
+    float:left;
+    margin:0.5%;
+}
+
+/*Up pointing*/
+.triangle-up {
+    width: 3%;
+    height: 0;    
+    padding-left:3%;
+    padding-bottom: 3%;
+    overflow: hidden;
+}
+.triangle-up:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    margin-left:-500px;
+    border-left: 500px solid transparent;
+    border-right: 500px solid transparent;
+    border-bottom: 500px solid #4679BD;
+}
+
+/*Right pointing*/
+.triangle-right {
+    width: 0;
+    height: 0;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    padding-left: 3%;
+    overflow: hidden;
+}
+.triangle-right:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    margin-top:-500px;
+    margin-left: -500px;
+    
+    border-top: 500px solid transparent;
+    border-bottom: 500px solid transparent;
+    border-left: 500px solid #4679BD;
+}
+
+/*Down pointing*/
+.triangle-down {
+    width: 3%;
+    height: 0;
+    padding-left:3%;
+    padding-top: 3%;
+    overflow: hidden;
+}
+.triangle-down:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    margin-left:-500px;
+    margin-top:-500px;
+    
+    border-left: 500px solid transparent;
+    border-right: 500px solid transparent;
+    border-top: 500px solid #4679BD;
+}
+
+/*Left pointing*/
+.triangle-left {
+    width: 3%;
+    height: 0;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    overflow: hidden;
+}
+.triangle-left:after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    margin-top:-500px;
+    
+    border-top: 500px solid transparent;
+    border-bottom: 500px solid transparent;
+    border-right: 500px solid #4679BD;
+}
+</style><div class="triangle-up"></div>
+
+<div class="triangle-right"></div>
+
+<div class="triangle-down"></div>
+
+<div class="triangle-left"></div>
+
+
+
+
