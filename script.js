@@ -174,3 +174,17 @@ document.getElementById('edit').addEventListener('click', function() {
 	}
 	location.reload(); // rechargement de la page
 });
+// --------------------------------------------------------
+// Fonction envoyer la notif
+// --------------------------------------------------------
+document.getElementById('appel').addEventListener('click', function() {
+	var now = new Date().getTime(), //récupère l'heure
+        heureNotif = new Date(now + 1*1000); //ajoute 1 sec à l'heure, pour lancer la notif 3 sec après le clic
+
+        window.plugin.notification.local.add({
+        id:      '1',               //On peut laisser toujours le meme id, cela ne gène pas a mon avis
+        title:   document.getElementById('PDL').value,
+        message: 'PDL : ' + localStorage.getItem(document.getElementById('PDL').value), //Message affiché dans la notif
+        date:    heureNotif // si on ne met pas ce paramètre la notif se lancera dès le clic
+        });
+});
