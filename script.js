@@ -5,6 +5,7 @@
  * www.nicolas-devynck.fr
  * 
  * Renaud Vivancos
+ * http://www.rvivancos.fr/cv/
  * 
  * Ulysse Gabelli
  * 
@@ -114,7 +115,7 @@ if (document.getElementById('numFix')) {
 // --------------------------------------------------------
 // Fonction ajout d'un PDL
 // --------------------------------------------------------
-function news() {
+document.getElementById('news').addEventListener('click', function() {
 	if (localStorage.length < 17) { // limitation a 12 du nombre de PDL (17-5 car le code INSEE et les N° de tel son aussi des localStorage)
 		var newName = document.getElementById('newName').innerHTML;
     	var newPdl = document.getElementById('newPdl').innerHTML;
@@ -129,18 +130,18 @@ function news() {
 	else {
 		alert("Nombre de PDL limiter"); // msg d'erreur
 	}
-}
+});
 // --------------------------------------------------------
 // Fonction sup d'un PDL
 // --------------------------------------------------------
-function del(delName) { // paramètres qui correspond à la key du localStorage
-    localStorage.removeItem(delName); // sup
+document.getElementById('del').addEventListener('click', function() { // paramètres qui correspond à la key du localStorage
+    localStorage.removeItem(document.getElementById('PDL').value); // sup
     location.reload(); // rechargement de la page
-}
+});
 // --------------------------------------------------------
 // Fonction edit des localStorage utile pour l'appli
 // --------------------------------------------------------
-function editNum() {
+document.getElementById('edit').addEventListener('click', function() {
 	if (regInsee.test(document.getElementById('numInsee').innerHTML)) { // verif si on est bon avec l'expression reguliere
 		localStorage.setItem("numInsee",document.getElementById('numInsee').innerHTML); // modif du localStorage
 	}
@@ -171,4 +172,5 @@ function editNum() {
 	else {
 		alert("Numero de l'interlocuteur privilégié invalide"); // msg d'erreur
 	}
-}
+	location.reload(); // rechargement de la page
+});
