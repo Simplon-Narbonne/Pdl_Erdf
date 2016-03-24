@@ -46,7 +46,7 @@
     document.getElementById("nfo").style.display = "none";
     document.getElementById("numUrgence").style.display = "none";
     document.getElementById('PDL').addEventListener('change', function() {
-        document.getElementById('nfo').innerHTML = document.getElementById('PDL').value+"<br />PDL<br> "+localStorage.getItem(document.getElementById('PDL').value);
+        document.getElementById('nfo').innerHTML = document.getElementById('PDL').value+"<br />PDL<br><div class='numPdl'>"+localStorage.getItem(document.getElementById('PDL').value)+"</div>";
         document.getElementById("PDL").style.display = "none";
         document.getElementById("nfo").style.display = "block";
         document.getElementById("appel").style.display = "inline";
