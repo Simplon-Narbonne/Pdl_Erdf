@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="index.css" >
+    <title>Appel</title>
+  </head>
+  <body>
+    <div class="bandeau">
+      <div class="divlogo">
+        <img src="IMG/logo-erdfblanc.png" class="logo"  />
+      </div>
+      <div class="divoption">
+        <a href="index.html">
+          <img src="IMG/home-erdf.png" class="option"/>
+        </a>
+      </div>
+    </div>
+
+    <div class="Clip">
+<select  class="selectpdl2" id="PDL">
+	<option>Choisir un PDL</option>
+</select>
+  <div id="BGcall" class="BigClip">
+    <img class="BCIMG" src="IMG/ClipVC.png" />
+          <h3 class="txtnfo" id="nfo"></h3>
+          <h3 class="INSEE">INSEE</h3>
+          <h3 class="txtInsee" id="numInsee"></h3>
+      </div>
+
+
+    <div class="LikleClip2">
+    	<div id="appel">
+
+<img src="IMG/CarreBC.png" class="LCIMG" />
+<img src="IMG/appel.png" class="appel_img" />
+<h4 class="Urgence" id="numUrgence"></h4>
+
+      </div>
+    </div>
+    </div>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript">
+    document.getElementById("appel").style.display = "none";
+    document.getElementById("nfo").style.display = "none";
+    document.getElementById("numUrgence").style.display = "none";
+    document.getElementById('PDL').addEventListener('change', function() {
+        document.getElementById('nfo').innerHTML = document.getElementById('PDL').value+"<br />PDL<br> "+localStorage.getItem(document.getElementById('PDL').value);
+        document.getElementById("PDL").style.display = "none";
+        document.getElementById("nfo").style.display = "block";
+        document.getElementById("appel").style.display = "inline";
+        document.getElementById("numUrgence").style.display = "block";
+        if (document.getElementById("PDL").style.display == 'none') {
+            document.getElementById('BGcall').addEventListener('click', function() {
+                document.getElementById("PDL").style.display = "inline";
+                document.getElementById("nfo").style.display = "none";
+                document.getElementById("appel").style.display = "none";
+                document.getElementById("numUrgence").style.display = "none";
+            }, false);
+        }
+    }, false);
+</script>
+  </body>
+</html>

@@ -1,0 +1,516 @@
+
+
+
+html{
+  margin:0;
+
+}
+
+img{
+  margin: 0;
+}
+
+
+@font-face {
+    font-family: "Neris";
+    src: url("FONT/neris.thin.otf");
+}
+
+body {
+  background-color: #005EB8;
+  margin: 0;
+  font-family: "Neris";
+
+
+}
+/*nth child nico*/
+option:nth-child(2n){
+            background-color: #DDD;
+        }
+a{
+  text-decoration: none;
+}
+[contenteditable="true"] {
+            width: 1vw;
+            height: 12vw;
+          }
+
+.bandeau {
+width: 100%;
+display: inline-block;
+}
+
+.divlogo{
+  width: 70%;
+  float:left;
+
+}
+
+.logo {
+  width: 75%;
+  margin: 5% 7.5% 7.5% 10%;
+}
+
+.divoption{
+  width: 25%;
+  text-align: center;
+  margin-top: 7%;
+  float:right;
+  margin-right: 5%;
+}
+.option {
+  width: 85%;
+}
+
+.Clip{
+  width: 100%;
+  height: 100%;
+
+}
+
+
+
+
+.BigClip {
+  width: 100%;
+  font-weight: bold;
+  font-size: 7.5vw;
+  color:white;
+z-index: 9;
+
+}
+.BigClip h2 {
+  position: relative;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: -3%;
+  text-align: justify;
+  width: 60%;
+  z-index: 9;
+  color: white;
+}
+
+.BCIMG{
+  width: 80%;
+  position: absolute;
+  margin-left: 10%;
+  margin-right: 10%;
+  z-index: 9;
+
+
+}
+
+.IMGTEL{
+  position: relative;
+  width: 50%;
+  margin-left: 27%;
+  margin-right: 23%;
+  margin-top: 10%;
+  z-index: 9;
+}
+
+
+
+
+.LikleClip{
+  width: 40%;
+  margin-left: 27.5%;
+  margin-right: 27.5%;
+  margin-top: -6.9%;
+  z-index:1;
+}
+
+.LCIMG{
+  width: 45%;
+position: absolute;
+z-index: 1;
+
+
+}
+
+.info_img{
+  position: relative;
+  width: 80%;
+  margin-right: 10%;
+  margin-left: 20%;
+  margin-top: 22.5%;
+  z-index: 1;
+
+}
+
+.LikleClip h4{
+  color:white;
+  position: relative;
+  margin-top: -5%;
+  width:80%;
+  margin-left: 15%;
+  margin-right: 15%;
+  z-index: 1;
+  font-size: 5vw;
+  text-align: center;
+}
+
+
+/*Css Contact.html*/
+
+
+
+.ClipVF {
+width: 100%;
+z-index: 1;
+}
+.ClipVC {
+width: 100%;
+z-index: 1;
+margin-top: 11%;
+}
+.ClipBC {
+width: 100%;
+z-index: 1;
+margin-top: 24%;
+
+}
+
+.num_1 {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+
+
+}
+.clip_1{
+  width: 45%;
+}
+.clip_1 h2{
+  z-index: 9;
+  margin-top: -100%;
+  font-size: 6vw;
+  text-align: center;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  color: white;
+  font-weight: bolder;
+  margin-left: -6%;
+
+}
+.num_js1 {
+  text-align: center;
+  color: white;
+  font-weight: bolder;
+  font-size: 7vw;
+  width: 55%;
+  float: right;
+  margin-top: -30%;
+}
+
+.num_2 {
+  display: inline-block;
+  width: 100%;
+}
+.clip_2{
+  width: 45%;
+  margin-top: -1.75%;
+}
+.clip_2 h2{
+  z-index: 9;
+  margin-top: -100%;
+  font-size: 6vw;
+  color: white;
+  font-weight: bolder;
+  text-align: center;
+
+}
+.num_js2 {
+  text-align: center;
+  color: white;
+  font-weight: bolder;
+  font-size: 7vw;
+  width: 55%;
+  float: right;
+  margin-top:-25%;
+}
+
+.num_3 {
+  display: inline-block;
+  width: 100%;
+}
+.clip_3{
+  width: 45%;
+  margin-top: -1.75%;
+}
+.clip_3 h2{
+  z-index: 9;
+  margin-top: -100%;
+  font-size: 6vw;
+  color: white;
+  font-weight: bolder;
+  text-align: center;
+  margin-left: -6%;
+}
+.num_js3 {
+  text-align: center;
+  color: white;
+  font-weight: bolder;
+  font-size: 7vw;
+  width: 55%;
+  float: right;
+  margin-top: -25.5%;
+}
+
+/*Appel.html*/
+
+.selectpdl2{
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+
+.appel_img{
+  margin-left: 17.5%;
+    margin-right: 2.5%;
+    margin-top: 16%;
+    position: relative;
+    width: 80%;
+    z-index: 1
+}
+
+.JS{
+  width: 100%;
+  font-weight: bold;
+  font-size: 7.5vw;
+  color:white;
+z-index: 9;
+position: relative;
+
+}
+
+ .txtnfo {
+  position: relative;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  z-index: 9;
+  text-align: center;
+  font-size: 10vw;
+  margin-bottom: -11%;
+
+}
+
+.txtInsee{
+  position: relative;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  z-index: 9;
+  text-align: center;
+  font-size: 10vw;
+  margin-top: -12%;
+}
+
+.INSEE{
+  position: relative;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  z-index: 9;
+  text-align: center;
+  font-size: 10vw;
+  /*margin-top: -11%;*/
+}
+
+.LikleClip2 h4{
+  color:white;
+  position: relative;
+  margin-top: -5%;
+  width:80%;
+  margin-left: 15%;
+  margin-right: 15%;
+  z-index: 1;
+  font-size: 5vw;
+  text-align: center;
+}
+
+.LikleClip2{
+  width: 40%;
+  margin-left: 27.5%;
+  margin-right: 27.5%;
+  margin-top: -6.9%;
+  z-index:1;
+}
+
+/*Option.html*/
+
+.BigClipSetting {
+  width: 100%;
+  font-weight: bolder;
+  font-size: 9vw;
+  color:white;
+z-index: 9;
+
+}
+
+.BigClipSetting h2 {
+  position: relative;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: -3%;
+  text-align: center;
+  width: 60%;
+  z-index: 9;
+  color: white;
+  padding-top: 6%;
+
+}
+
+.LikleClipSetting{
+  width: 40%;
+  margin-left: 27.5%;
+  margin-right: 27.5%;
+
+  z-index:1;
+}
+
+.LikleClipSetting h4{
+  color:white;
+  position: relative;
+  margin-top: -5%;
+  width:80%;
+  margin-left: 15%;
+  margin-right: 15%;
+  z-index: 1;
+  font-size: 8vw;
+  text-align: center;
+  padding-top: 8%;
+}
+
+/*Edit PDL*/
+
+.numInsee{
+  text-align: center;
+  width: 40%;
+  background-color: white;
+  margin-left: 30%;
+  margin-right: 30%;
+  border-radius: 1vw;
+  font-size: 7vw;
+}
+
+#edit{
+  margin-left: 36.5%;
+  margin-right: 36.5%;
+  margin-top: 5%;
+  height: 10vw;
+  margin-bottom: 4%;
+  font-size: 5vw;
+  width: 27%;
+  text-align: center;
+
+}
+
+#newName{
+  text-align: center;
+  width: 70%;
+  background-color: white;
+  margin-left: 15%;
+  margin-right: 15%;
+  border-radius: 1vw;
+  font-size: 7vw;
+
+}
+
+#newPdl{
+  text-align: center;
+  width: 70%;
+  background-color: white;
+  margin-left: 15%;
+  margin-right: 15%;
+  border-radius: 1vw;
+  font-size: 7vw;
+}
+
+.Edit_PDL h4{
+  color:white;
+  font-size: 6vw;
+  text-align: center;
+  margin-top: 3%;
+}
+
+.Edit_PDL{
+  margin-top: -12.5%;
+}
+
+.edit_button1{
+  width: 30%;
+margin-left: 35%;
+margin-right: 35%;
+margin-top:7.5%;
+margin-bottom: 6%;
+font-size: 6vw;
+
+
+}
+.edit_button2{
+  width: 30%;
+
+margin-left: 35%;
+margin-right: 35%;
+margin-top:7.5%;
+margin-bottom: 6%;
+font-size: 6vw;
+}
+
+ .selectpdl{
+  width: 60%;
+  height: 10vw;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 15%;
+
+}
+
+/*Edit_NUM*/
+
+.title{
+  color: white;
+   font-size: 12vw;
+   margin-top: -5%;
+   text-align: center;
+}
+
+.numService {
+  text-align: center;
+  width: 50%;
+  background-color: white;
+  margin-left: 25%;
+  margin-right: 25%;
+  border-radius: 1vw;
+  font-size: 7vw;
+
+}
+
+.numPortable{
+  text-align: center;
+  width: 50%;
+  background-color: white;
+  margin-left: 25%;
+  margin-right: 25%;
+  border-radius: 1vw;
+  font-size: 7vw;
+}
+
+.numFix{
+  text-align: center;
+  width: 50%;
+  background-color: white;
+  margin-left: 25%;
+  margin-right: 25%;
+  border-radius: 1vw;
+  font-size: 7vw;
+}
+
+.Edit_NUM h4{
+  color:white;
+  text-align: center;
+}

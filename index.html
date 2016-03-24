@@ -51,11 +51,31 @@
 <br />
 <button type="button" id="del">Suprimer</button>
 
+<div id="nfo"></div>
 <button type="button" id="appel">Appel</button>
+
 
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="script.js"></script>
-
-
+<script type="text/javascript">
+	document.getElementById("appel").style.display = "none";
+	document.getElementById("nfo").style.display = "none";
+	document.getElementById("numUrgence").style.display = "none";
+	document.getElementById('PDL').addEventListener('change', function() {
+		document.getElementById('nfo').innerHTML = "<br />"+document.getElementById('PDL').value+"<br />PDL : "+localStorage.getItem(document.getElementById('PDL').value)+"<br />";
+	    document.getElementById("PDL").style.display = "none";
+	    document.getElementById("nfo").style.display = "block";
+	    document.getElementById("appel").style.display = "block";
+	    document.getElementById("numUrgence").style.display = "block";
+	    if (document.getElementById("PDL").style.display == 'none') {
+			document.getElementById('BGcall').addEventListener('click', function() {
+				document.getElementById("PDL").style.display = "block";
+	    		changedocument.getElementById("nfo").style.display = "none";
+	    		document.getElementById("appel").style.display = "none";
+	    		document.getElementById("numUrgence").style.display = "none";
+			}, false);
+		}
+	}, false);
+</script>
 </body>
 </html>

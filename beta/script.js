@@ -1,14 +1,14 @@
 /*
  * Cree par:
- * 
+ *
  * Nicolas Devynck
  * www.nicolas-devynck.fr
- * 
+ *
  * Renaud Vivancos
  * http://www.rvivancos.fr/cv/
- * 
+ *
  * Ulysse Gabelli
- * 
+ *
  * Isabelle Gomes Da Costa
  * facebook.com/isabel.dacosta.50552
  */
@@ -67,16 +67,16 @@ if (!localStorage.getItem("numPortable")) { // vérif de l'existence du localSto
 // Affichage de tout les PDL si l'ID existe
 // --------------------------------------------------------
 if(document.getElementById('PDL')) { // verif de l'existence de l'ID PDL
- //	document.getElementById('PDL').size = 12; //taille du select
+	//document.getElementById('PDL').size = 12; //taille du select//
 	for (var i = 0; i < localStorage.length; i++) { //boucle qui recup tout les pdl
 		var keyStorage = localStorage.key(i);
-		var valueStorage = localStorage.getItem(localStorage.key(i));		
+		var valueStorage = localStorage.getItem(localStorage.key(i));
 		if (keyStorage === 'numInsee') { continue; } // ignorer le localStorage numInsee
 		if (keyStorage === 'numUrgence') { continue; } // ignorer le localStorage numUrgence
 		if (keyStorage === 'numService') { continue; } // ignorer le localStorage numService
 		if (keyStorage === 'numPortable') { continue; } // ignorer le localStorage numPortable
 		if (keyStorage === 'numFix') { continue; } // ignorer le localStorage numFix
-		// générer l'affichage	
+		// générer l'affichage
 		document.getElementById('PDL').innerHTML += "<option value='"+ keyStorage + "'>"+ keyStorage +"</option>";
 	}
 }
@@ -123,7 +123,6 @@ if (document.getElementById('news')){
 	    	var newPdl = document.getElementById('newPdl').innerHTML;
 			if (regPdl.test(newPdl) && newName){ // verif si on est bon avec l'expression reguliere et si Le nom du PDL existe
 				localStorage.setItem(newName,newPdl); // creation du localStorage
-				alert('Modification validée(s)'); //msg de validation
 				location.reload(); // rechargement de la page
 			}
 			else {
@@ -141,7 +140,6 @@ if (document.getElementById('news')){
 if (document.getElementById('del')){
 	document.getElementById('del').addEventListener('click', function() { // paramètres qui correspond à la key du localStorage
 	    localStorage.removeItem(document.getElementById('PDL').value); // sup
-	    alert('Modification validée(s)'); //msg de validation
 	    location.reload(); // rechargement de la page
 	}, false);
 }
@@ -201,13 +199,13 @@ if (document.getElementById('appel')){
 	document.getElementById('appel').addEventListener('click', function() {
 		var now = new Date().getTime(), //récupère l'heure
 		heureNotif = new Date(now + 1*1000); //ajoute 1 sec à l'heure, pour lancer la notif 3 sec après le clic
-	
+
 		window.plugin.notification.local.add({
 			id:      '1',               //On peut laisser toujours le meme id, cela ne gène pas a mon avis
 		    title:   document.getElementById('PDL').value,
 		    message: 'PDL : ' + localStorage.getItem(document.getElementById('PDL').value), //Message affiché dans la notif
 		    date:    heureNotif // si on ne met pas ce paramètre la notif se lancera dès le clic
 		});
-		document.location.href='tel:+33'+localStorage.getItem('numUrgence').substr(1);
+	document.location.href='tel:+33'+localStorage.getItem('numUrgence').substr(1);
 	}, false);
 }
