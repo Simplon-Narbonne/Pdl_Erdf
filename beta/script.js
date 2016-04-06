@@ -12,6 +12,32 @@
  * Isabelle Gomes Da Costa
  * facebook.com/isabel.dacosta.50552
  */
+//fonction pour ajouter un espace dans les numero
+function splitNum(num) {
+	var tabArr = num.split("");
+     var strFinal = "";
+     for (var i = 0; i < tabArr.length; i++) {
+       strFinal+=tabArr[i];
+       if((i % 3) == 0) {
+         strFinal+= " ";
+       }
+     }
+     return strFinal;
+	}
+
+     
+//fonction pour ajouter un espace dans les PDL
+function splitPdl(Pdl) {
+     var tabArr = Pdl.split("");
+     var strFinal = "";
+     for (var i = 0; i < tabArr.length; i++) {
+       if((i % 3) == 0) {
+         strFinal+= " ";
+       }
+       strFinal+=tabArr[i];
+     }
+     return strFinal;
+}
 var regInsee=new RegExp("^[0-9]{5}$"); // expression reguliere pour le code INSEE
 var regTel=new RegExp("^[0-9]{10}$"); // expression reguliere pour les N° de Tél
 var regPdl=new RegExp("^[0-9]{14}$"); // expression reguliere pour les PDL
@@ -54,6 +80,10 @@ if (!localStorage.getItem("numFix")) { // vérif de l'existence du localStorage
    		alert("Numero de l'interlocuteur privilégié invalide"); // msg d'erreur
 	}
 }
+if (!localStorage.getItem("Nom")) { // vérif de l'existence du localStorage
+   	var numFix = prompt("Veuillez entrer le Nom de l'interlocuteur privilégié", "Mr Leroutier"); //invitation a entré les info
+	localStorage.setItem("Nom", numFix); // creation du localStorage
+}
 if (!localStorage.getItem("numPortable")) { // vérif de l'existence du localStorage
    	var numPortable = prompt("Veuillez entrer Numero de l'interlocuteur privilégié", "0786556415"); //invitation a entré les info
    	if (regTel.test(numPortable)) { // verif si on est bon avec l'expression reguliere
@@ -71,6 +101,7 @@ if(document.getElementById('PDL')) { // verif de l'existence de l'ID PDL
 	for (var i = 0; i < localStorage.length; i++) { //boucle qui recup tout les pdl
 		var keyStorage = localStorage.key(i);
 		var valueStorage = localStorage.getItem(localStorage.key(i));
+		if (keyStorage === 'Nom') { continue; } // ignorer le Nom
 		if (keyStorage === 'numInsee') { continue; } // ignorer le localStorage numInsee
 		if (keyStorage === 'numUrgence') { continue; } // ignorer le localStorage numUrgence
 		if (keyStorage === 'numService') { continue; } // ignorer le localStorage numService
@@ -96,22 +127,25 @@ if (document.getElementById('numFixLink')){
 	document.getElementById('numFixLink').href = 'tel:+33'+localStorage.getItem('numFix').substr(1);
 }
 // --------------------------------------------------------
-// générer les N° tél si l'ID existe
+// générer les N° tél et le nom si l'ID existe
 // --------------------------------------------------------
+if (document.getElementById('Nom')){
+	document.getElementById('Nom').innerHTML = localStorage.getItem('Nom');
+}
 if (document.getElementById('numInsee')){
 	document.getElementById('numInsee').innerHTML = localStorage.getItem('numInsee');
 }
 if (document.getElementById('numUrgence')){
-	document.getElementById('numUrgence').innerHTML = localStorage.getItem('numUrgence');
+	document.getElementById('numUrgence').innerHTML = splitNum(localStorage.getItem('numUrgence'));
 }
 if (document.getElementById('numService')){
-	document.getElementById('numService').innerHTML = localStorage.getItem('numService');
+	document.getElementById('numService').innerHTML = splitNum(localStorage.getItem('numService'));
 }
 if (document.getElementById('numPortable')){
-	document.getElementById('numPortable').innerHTML = localStorage.getItem('numPortable');
+	document.getElementById('numPortable').innerHTML = splitNum(localStorage.getItem('numPortable'));
 }
 if (document.getElementById('numFix')) {
-	document.getElementById('numFix').innerHTML = localStorage.getItem('numFix');
+	document.getElementById('numFix').innerHTML = splitNum(localStorage.getItem('numFix'));
 }
 // --------------------------------------------------------
 // Fonction ajout d'un PDL
@@ -155,6 +189,9 @@ if (document.getElementById('edit')){
 			else {
 				alert("Code INSEE invalide"); // msg d'erreur
 			}
+		}
+		if (document.getElementById('Nom')){ // nom du l'interlocuteur priviliger
+			localStorage.setItem("Nom",document.getElementById('Nom').innerHTML); // modif du localStorage
 		}
 		if (document.getElementById('numUrgence')){
 			if (regTel.test(document.getElementById('numUrgence').innerHTML)) { // verif si on est bon avec l'expression reguliere
@@ -203,7 +240,7 @@ if (document.getElementById('appel')){
 		window.plugin.notification.local.add({
 			id:      '1',               //On peut laisser toujours le meme id, cela ne gène pas a mon avis
 		    title:   document.getElementById('PDL').value,
-		    message: 'PDL : ' + localStorage.getItem(document.getElementById('PDL').value), //Message affiché dans la notif
+		    message: 'PDL : ' + splitPdl(localStorage.getItem(document.getElementById('PDL').value)), //Message affiché dans la notif
 		    date:    heureNotif // si on ne met pas ce paramètre la notif se lancera dès le clic
 		});
 	document.location.href='tel:+33'+localStorage.getItem('numUrgence').substr(1);
